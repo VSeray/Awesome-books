@@ -3,6 +3,9 @@ This project is a basic website that allows users to add/remove books from a lis
 
 This project is part of the Microverse curriculum Module 2 Block 1. The main objective is of this is to understand how to use JavaScript objects and arrays dynamically and to modify the DOM and add basic events. This will follow professional guidlines in responsive design.
 
+# Live Demo
+[Live Demo](https://vseray.github.io/Awesome-books/)
+
 # Built With
 
     .HTML
