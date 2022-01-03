@@ -1,23 +1,3 @@
-let books = JSON.parse(localStorage.getItem('books') || '[]');
-const bookList = document.querySelector('#book-list');
-const titleElement = document.querySelector('#title');
-const authorElement = document.querySelector('#author');
-
-function Book(title, author) {
-  this.title = title;
-  this.author = author;
-}
-
-function addBook(book) {
-  books.push(book);
-  localStorage.setItem('books', JSON.stringify(books));
-}
-
-function removeBook(book) {
-  books = books.filter((bookEl) => bookEl !== book);
-  localStorage.setItem('books', JSON.stringify(books));
-}
-
 const saveToLocalStorage = (key, data) => localStorage.setItem(key, JSON.stringify(data));
 const getFromLocalStorage = (key) => JSON.parse(localStorage.getItem(key));
 
