@@ -1,3 +1,59 @@
 * {
   margin: 10px;
 }
+
+.header {
+  text-align: center;
+}
+
+#bitems {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid gray;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 40px;
+  background-color: rgb(185, 180, 180);
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.hr {
+  width: 20vw;
+  color: #000;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wrapper-ul {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+}
+
+.btn {
+  margin-top: -15px;
+}
+
+.remove {
+  box-shadow: 5px 5px #000;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.form-container {
+  text-align: center;
+}
+
+.button {
+  margin-left: 148px;
+}
