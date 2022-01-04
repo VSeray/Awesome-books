@@ -1,4 +1,3 @@
-/* eslint-disable */
 const saveToLocalStorage = (key, data) =>
   localStorage.setItem(key, JSON.stringify(data));
 const getFromLocalStorage = (key) => JSON.parse(localStorage.getItem(key));
@@ -53,7 +52,8 @@ class Bclasses {
 function displayBooks() {
   const bookItems = Bclasses.getAllBooks();
 
-  const booksCode = bookItems.map((book) => new Bclasses(book.title, book.author, book.id).getCode());
+  const booksCode = bookItems.map((book) => new Bclasses(book.title, book.author, book.id).getCode()
+  );
   document.getElementById('bitems').innerHTML = booksCode.join('');
 
   const removeButtons = Array.from(document.querySelectorAll('.remove'));
