@@ -17,10 +17,9 @@ class Bclasses {
               <li class='title'>"${this.title}" by</li>
               <li class='author'>${this.author}</li>
             </ul>
-            <ul>
+            <ul class='btn'>
               <li><button class='remove' data-id='${this.id}'>Remove</button></li>
             </ul>
-              
            </div>`;
   }
 
