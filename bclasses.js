@@ -1,4 +1,5 @@
-const saveToLocalStorage = (key, data) => localStorage.setItem(key, JSON.stringify(data));
+const saveToLocalStorage = (key, data) =>
+  localStorage.setItem(key, JSON.stringify(data));
 const getFromLocalStorage = (key) => JSON.parse(localStorage.getItem(key));
 
 class Bclasses {
@@ -11,10 +12,16 @@ class Bclasses {
   }
 
   getCode() {
-    return `<div>${this.title}</div>
-              <div>${this.author}</div>
-              <button class='remove' data-id='${this.id}'>Remove</button>
-              <hr>`;
+    return `<div class='wrapper'>
+            <ul class='wrapper-ul'>
+              <li class='title'>"${this.title}" by</li>
+              <li class='author'>${this.author}</li>
+            </ul>
+            <ul>
+              <li><button class='remove' data-id='${this.id}'>Remove</button></li>
+            </ul>
+              
+           </div>`;
   }
 
   static add(book) {

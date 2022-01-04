@@ -1,3 +1,21 @@
 * {
   margin: 10px;
 }
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  border: 3px solid gray;
+  justify-content: space-between;
+  width: 400px;
+}
+
+.wrapper-ul {
+  display: flex;
+  flex-direction: row;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
