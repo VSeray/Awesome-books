@@ -1,7 +1,7 @@
 const saveToLocalStorage = (key, data) => localStorage.setItem(key, JSON.stringify(data));
 const getFromLocalStorage = (key) => JSON.parse(localStorage.getItem(key));
 
-class Bclasses {
+class Book {
   constructor(title, author, id = undefined) {
     this.title = title;
     this.author = author;
@@ -11,15 +11,10 @@ class Bclasses {
   }
 
   getCode() {
-    return `<div class='wrapper'>
-            <ul class='wrapper-ul'>
-              <li class='title'>"${this.title}" by</li>
-              <li class='author'>${this.author}</li>
-            </ul>
-            <ul class='btn'>
-              <li><button class='remove' data-id='${this.id}'>Remove</button></li>
-            </ul>
-           </div>`;
+    return ` <tr>
+              <td>"${this.title}" by ${this.author}</td>
+              <td><button class='remove' data-id='${this.id}'>Remove</td>
+              </tr>`;
   }
 
   static add(book) {
@@ -49,17 +44,16 @@ class Bclasses {
 }
 
 function displayBooks() {
-  const bookItems = Bclasses.getAllBooks();
+  const bookItems = Book.getAllBooks();
 
-  const booksCode = bookItems.map((book) => new
-  Bclasses(book.title, book.author, book.id).getCode());
+  const booksCode = bookItems.map((book) => new Book(book.title, book.author, book.id).getCode());
   document.getElementById('bitems').innerHTML = booksCode.join('');
 
   const removeButtons = Array.from(document.querySelectorAll('.remove'));
   removeButtons.forEach((removeButton) => {
     removeButton.addEventListener('click', (event) => {
       const id = event.target.getAttribute('data-id');
-      Bclasses.remove(id);
+      Book.remove(id);
       displayBooks();
     });
   });
@@ -80,7 +74,38 @@ document
       return;
     }
 
-    const book = new Bclasses(title, author);
-    Bclasses.add(book);
+    const book = new Book(title, author);
+    Book.add(book);
     displayBooks();
   });
+
+const listElement = document.getElementById('list');
+const formElement = document.getElementById('newbook');
+const contactElement = document.getElementById('contact');
+const listBody = document.querySelector('.header');
+const formBody = document.querySelector('.form');
+const contactBody = document.querySelector('.contactsection');
+
+listElement.addEventListener('click', () => {
+  listBody.style.display = 'block';
+  formBody.style.display = 'none';
+  contactBody.style.display = 'none';
+});
+
+formElement.addEventListener('click', () => {
+  formBody.style.display = 'block';
+  listBody.style.display = 'none';
+  contactBody.style.display = 'none';
+});
+
+contactElement.addEventListener('click', () => {
+  contactBody.style.display = 'flex';
+  listBody.style.display = 'none';
+  formBody.style.display = 'none';
+});
+
+window.addEventListener('load', () => {
+  const { DateTime } = luxon; /* eslint-disable-line no-undef */
+  this.today = DateTime.now();
+  document.getElementById('times').textContent = this.today.toLocaleString(DateTime.DATETIME_MED);
+});
